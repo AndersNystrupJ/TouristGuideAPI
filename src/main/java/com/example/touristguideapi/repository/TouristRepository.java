@@ -1,0 +1,58 @@
+package com.example.touristguideapi.repository;
+
+import com.example.touristguideapi.model.TouristAttraction;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class TouristRepository {
+    private final List<TouristAttraction> touristAttractions = new ArrayList<>();
+
+    public TouristRepository() {
+        populatedAttraction();
+    }
+
+    public void populatedAttraction() {
+        touristAttractions.add(new TouristAttraction("Rundetårn", "36m høj bygning på strøget. Bygget i 1600-tallet."));
+        touristAttractions.add(new TouristAttraction("Den lille havfrue", "Lille bronzestatue i vandet ved langelinie. Illustrerer den lille havfrue fra H.C. Andersens eventyr."));
+        touristAttractions.add(new TouristAttraction("Proud mary", "Hjertet af Københavns natteliv med gode chancer for at drikke dig fuldkommen sønder og sammen."));
+    }
+
+    //GETMAPPING-ATTRACTION{NAME}
+    public TouristAttraction findAttractionByName(String name) {
+        TouristAttraction touristAttractionMatch = null;
+        for (TouristAttraction attraction : getAllTouristAttractions()) {
+            if (name.equals(attraction.getName())) {
+                touristAttractionMatch = attraction;
+            }
+        }
+        return touristAttractionMatch;
+    }
+
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction){
+        touristAttraction.setName(touristAttraction.getName());
+        touristAttractions.add(touristAttraction);
+        return touristAttraction;
+    }
+
+
+    public List<TouristAttraction> getAllTouristAttractions() {
+        return touristAttractions;
+    }
+    public TouristAttraction updateAttraction(TouristAttraction touristAttraction){
+        TouristAttraction touristAttractionMatch = null;
+        for (TouristAttraction attraction : getAllTouristAttractions()) {
+            if (touristAttraction.getName().equals(attraction.getName())) {
+                touristAttractionMatch = attraction;
+            }
+        }
+        touristAttractionMatch.setDescription(touristAttraction.getDescription());
+        return touristAttraction;
+    }
+}
+
+
+
+
