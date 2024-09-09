@@ -15,9 +15,10 @@ public class TouristRepository {
     }
 
     public void populatedAttraction() {
-        touristAttractions.add(new TouristAttraction("Rundetårn", "36m høj bygning på strøget. Bygget i 1600-tallet."));
-        touristAttractions.add(new TouristAttraction("Den lille havfrue", "Lille bronzestatue i vandet ved langelinie. Illustrerer den lille havfrue fra H.C. Andersens eventyr."));
-        touristAttractions.add(new TouristAttraction("Proud mary", "Hjertet af Københavns natteliv med gode chancer for at drikke dig fuldkommen sønder og sammen."));
+        touristAttractions.add(new TouristAttraction("The round tower", "36m høj bygning på strøget. Bygget i 1600-tallet."));
+        touristAttractions.add(new TouristAttraction("The little mermaid", "Lille bronzestatue i vandet ved langelinie. Illustrerer den lille havfrue fra H.C. Andersens eventyr."));
+        touristAttractions.add(new TouristAttraction("Proud Mary", "Hjertet af Københavns natteliv med gode chancer for at drikke dig fuldkommen sønder og sammen."));
+        touristAttractions.add(new TouristAttraction("Nyhavn", "Old harbour in the center of Copenhagen, dominated by colorful buildings, and a cozy atmosphere with restaurants along the promenade"));
     }
 
     //GETMAPPING-ATTRACTION{NAME}
